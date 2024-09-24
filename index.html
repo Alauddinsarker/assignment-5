@@ -30,10 +30,7 @@
         position: relative;
         top: 100px;
       }
-      /* #footer {
-        position: relative;
-        bottom: 0;
-      } */
+
       @media only screen and (max-width: 576px) {
         #main1-wrapper,
         #main2-wrapper,
@@ -47,12 +44,10 @@
           top: 0;
           z-index: 10000;
         }
-        /* #btn-section{
-          position: fixed;
-          top:100px;
-        } */
+
         #main-section {
           position: relative;
+          top: 200px;
         }
         #header-wrap {
           grid-gap: 10px;
@@ -61,25 +56,6 @@
     </style>
   </head>
   <body>
-    <!-- <div class="bg-[#F9F7F3]">
-      <header id="header-wrap" class="w-4/5 mx-auto flex justify-between py-8">
-      <div>
-          <button onclick="blogLink()"
-          class="p-2 rounded-lg w-[80px] bg-[#B4F461] text-[#111111] font-bold text-xl"
-        >Blog
-        </button>
-      </div>
-      <div class="flex items-center gap-2">
-        <img src="./assets/logo.png" alt="" />
-        <p class="font-semibold text-xl text-[#111111]">Donate Bangladesh</p>
-      </div>
-      <div class="flex items-center gap-2">
-        <img src="./assets/coin.png" alt="" />
-        <p><span id="donationable-amount">10000</span> BDT</p>
-      </div>
-      </div>
-      
-    </header> -->
     <header id="header" class="bg-[#F9F7F3]">
       <div id="header-wrap" class="w-4/5 mx-auto flex justify-between py-8">
         <div>
@@ -105,7 +81,7 @@
             <img src="./assets/coin.png" alt="" />
           </div>
           <div>
-            <p><span id="donationable-amount">10000</span> BDT</p>
+            <p><span id="donationable-amount">100000</span> BDT</p>
           </div>
         </div>
       </div>
@@ -128,20 +104,6 @@
       </div>
     </header>
     <main id="main-section" class="w-4/5 mx-auto py-8 mt-4">
-      <!-- <div id="btn-section" class="flex items-center justify-center gap-5">
-        <button
-          id="show-donation"
-          class="p-2 rounded-lg w-[120px] bg-[#B4F461] border-0 text-[#111111] font-bold text-xl"
-        >
-          Donation
-        </button>
-        <button
-          id="show-history"
-          class="p-2 rounded-lg w-[120px] bg-slate-200 border-0 text-[#111111] font-bold text-xl"
-        >
-          History
-        </button>
-      </div> -->
       <div id="donation-section">
         <div
           id="main1-wrapper"
@@ -187,7 +149,7 @@
                 <div class="modal-box flex flex-col items-center">
                   <h3 class="text-lg font-bold">Congrates</h3>
                   <div class="">
-                    <div>
+                    <div class="flex items-center justify-center gap-2">
                       <img src="./assets/coin.png" alt="" />
                       <p><span id="modal-amount">0</span></p>
                     </div>
@@ -198,7 +160,6 @@
                   <h5>Successfully</h5>
                   <div class="modal-action">
                     <form method="dialog">
-                      <!-- if there is a button in form, it will close the modal -->
                       <button class="btn">Close Confirmation</button>
                     </form>
                   </div>

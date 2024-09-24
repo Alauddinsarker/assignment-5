@@ -4,10 +4,10 @@ window.addEventListener("scroll", function () {
 });
 
 function blogLink() {
-  window.location.href = "../blog.html";
+  window.location.href = "./blog.html";
 }
 function homeLink() {
-  window.location.href = "../index.html";
+  window.location.href = "./index.html";
 }
 
 function getInputFieldValueById(id) {
