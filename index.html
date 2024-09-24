@@ -72,7 +72,25 @@
           <div class="">
             <input id="noakhali-amount" class="border border-slate-300 rounded-xl w-5/6 p-4" type="text" placeholder="Write Donation Amount">
           </div>
-          <div class="text-[#111111] font-bold text-xl"><button id="noakhali-donate-now" class="p-4 rounded-xl w-5/6 bg-[#B4F461]">Donate Now</button></div>
+          <div class="text-[#111111] font-bold text-xl">
+            <button id="noakhali-donate-now" class="p-4 rounded-xl w-5/6 bg-[#B4F461]">Donate Now</button>
+            <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box flex flex-col items-center">
+                <h3 class="text-lg font-bold">Congrates</h3>
+                <div id="modal-amount" class="">
+                  
+                </div>
+                <p class="py-4 text-sm font-normal">You have donated for humankind</p>
+                <h5>Successfully</h5>
+                <div class="modal-action">
+                  <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close Confirmation</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+          </div>
         </div>
       </div>
       <div id="main1-wrapper" class="grid grid-cols-2 gap-4 my-10 p-4 items-center border border-slate-300 rounded-2xl">
@@ -111,6 +129,8 @@
       </div>
     </div>
     </main>
+    <!-- Open the modal using ID.showModal() method -->
+
     <footer class="bg-[#F9F7F3] h-24">
 
     </footer>
