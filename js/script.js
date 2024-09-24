@@ -1,3 +1,8 @@
+window.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 0);
+});
+
 function blogLink() {
   window.location.href = "../blog.html";
 }
@@ -64,7 +69,7 @@ document
     const noakhaliHeading =
       document.getElementById("noakhali-heading").innerText;
     h4.innerHTML = `
-      <div class="border border-gray-400 rounded-lg p-2 my-5">
+      <div class="border border-gray-400 rounded-lg p-2 my-12">
       <p class="font-bold text-xl">${noakhaliAmount} Taka is ${noakhaliHeading}</p>
       <p>Date: ${new Date()}</p>
       </div>
@@ -172,6 +177,7 @@ showHistory.addEventListener("click", function () {
   showHistory.classList.add("bg-[#B4F461]");
   showDonation.classList.add("bg-slate-200");
   showHistory.classList.remove("bg-slate-200");
+  document.getElementById("footer").classList.add("hidden");
 
   showSectionById("donation-history");
 });

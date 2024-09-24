@@ -20,6 +20,20 @@
       .lexend-font {
         font-family: "Lexend", sans-serif;
       }
+      #header {
+        position: fixed;
+        top: 0;
+        z-index: 10000;
+        width: 100%;
+      }
+      #main-section {
+        position: relative;
+        top: 100px;
+      }
+      /* #footer {
+        position: relative;
+        bottom: 0;
+      } */
       @media only screen and (max-width: 576px) {
         #main1-wrapper,
         #main2-wrapper,
@@ -27,6 +41,18 @@
         #header-wrap {
           display: grid;
           grid-template-columns: repeat(1, 1fr);
+        }
+        #header {
+          position: fixed;
+          top: 0;
+          z-index: 10000;
+        }
+        /* #btn-section{
+          position: fixed;
+          top:100px;
+        } */
+        #main-section {
+          position: relative;
         }
         #header-wrap {
           grid-gap: 10px;
@@ -54,7 +80,7 @@
       </div>
       
     </header> -->
-    <header class="bg-[#F9F7F3]">
+    <header id="header" class="bg-[#F9F7F3]">
       <div id="header-wrap" class="w-4/5 mx-auto flex justify-between py-8">
         <div>
           <button
@@ -83,9 +109,10 @@
           </div>
         </div>
       </div>
-    </header>
-    <main class="w-4/5 mx-auto py-8">
-      <div class="flex items-center justify-center gap-5">
+      <div
+        id="btn-section"
+        class="flex items-center justify-center gap-5 py-3 bg-white"
+      >
         <button
           id="show-donation"
           class="p-2 rounded-lg w-[120px] bg-[#B4F461] border-0 text-[#111111] font-bold text-xl"
@@ -99,6 +126,22 @@
           History
         </button>
       </div>
+    </header>
+    <main id="main-section" class="w-4/5 mx-auto py-8 mt-4">
+      <!-- <div id="btn-section" class="flex items-center justify-center gap-5">
+        <button
+          id="show-donation"
+          class="p-2 rounded-lg w-[120px] bg-[#B4F461] border-0 text-[#111111] font-bold text-xl"
+        >
+          Donation
+        </button>
+        <button
+          id="show-history"
+          class="p-2 rounded-lg w-[120px] bg-slate-200 border-0 text-[#111111] font-bold text-xl"
+        >
+          History
+        </button>
+      </div> -->
       <div id="donation-section">
         <div
           id="main1-wrapper"
@@ -261,7 +304,7 @@
       </div>
     </main>
 
-    <footer class="bg-[#F9F7F3] h-24"></footer>
+    <footer id="footer" class="bg-[#F9F7F3] h-24 mt-12"></footer>
 
     <script src="./js/script.js"></script>
   </body>
