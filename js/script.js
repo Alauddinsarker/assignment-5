@@ -14,6 +14,12 @@ function getDonationAbleAmountById() {
   return donationAbleAmount;
 }
 
+function showSectionById(id) {
+  document.getElementById("donation-section").classList.add("hidden");
+  document.getElementById("donation-history").classList.add("hidden");
+  document.getElementById(id).classList.remove("hidden");
+}
+
 document
   .getElementById("noakhali-donate-now")
   .addEventListener("click", function () {
@@ -41,13 +47,22 @@ document
     const newDonationAbleAmount = donationAbleAmount - noakhaliAmount;
     document.getElementById("donationable-amount").innerText =
       newDonationAbleAmount;
-    const modalAmount = document.getElementById("modal-amount");
-    const p = document.createElement("p");
-    p.innerHTML = `
-      <img src="./assets/coin.png" alt="" /> ${noakhaliAmount}
-      `;
-    modalAmount.appendChild(p);
 
+    const modalAmount = document.getElementById("modal-amount");
+    modalAmount.innerHTML = `
+       ${noakhaliAmount}
+      `;
+
+    const h4 = document.createElement("h4");
+    const noakhaliHeading =
+      document.getElementById("noakhali-heading").innerText;
+    h4.innerHTML = `
+      <div class="border border-gray-400 rounded-lg p-2 my-5">
+      <p class="font-bold text-xl">${noakhaliAmount} Taka is ${noakhaliHeading}</p>
+      <p>Date: ${new Date()}</p>
+      </div>
+      `;
+    document.getElementById("donation-history-log").appendChild(h4);
     document.getElementById("noakhali-amount").value = "";
   });
 
@@ -76,13 +91,20 @@ document
     const newDonationAbleAmount = donationAbleAmount - feniAmount;
     document.getElementById("donationable-amount").innerText =
       newDonationAbleAmount;
-    const modalAmount = document.getElementById("modal-amount");
-    const p = document.createElement("p");
-    p.innerHTML = `
-      <img src="./assets/coin.png" alt="" /> ${feniAmount}
-      `;
-    modalAmount.appendChild(p);
 
+    const modalAmount = document.getElementById("modal-amount");
+    modalAmount.innerHTML = `
+       ${feniAmount}
+      `;
+    const h4 = document.createElement("h4");
+    const feniHeading = document.getElementById("feni-heading").innerText;
+    h4.innerHTML = `
+      <div class="border border-gray-400 rounded-lg p-2 my-5">
+      <p class="font-bold text-xl">${feniAmount} Taka is ${feniHeading}</p>
+      <p>Date: ${new Date()}</p>
+      </div>
+      `;
+    document.getElementById("donation-history-log").appendChild(h4);
     document.getElementById("feni-amount").value = "";
   });
 
@@ -112,10 +134,28 @@ document
     document.getElementById("donationable-amount").innerText =
       newDonationAbleAmount;
     const modalAmount = document.getElementById("modal-amount");
-    const p = document.createElement("p");
-    p.innerHTML = `
-      <img src="./assets/coin.png" alt="" /> ${quotaAmount}
+    // const p = document.createElement("p");
+    // modalAmount.innerHTML = "";
+    modalAmount.innerHTML = `
+       ${quotaAmount}
       `;
-    modalAmount.appendChild(p);
+
+    // modalAmount.appendChild(p);
+    const h4 = document.createElement("h4");
+    const quotaHeading = document.getElementById("quota-heading").innerText;
+    h4.innerHTML = `
+      <div class="border border-gray-400 rounded-lg p-2 my-5">
+      <p class="font-bold text-xl">${quotaAmount} Taka is ${quotaHeading}</p>
+      <p>Date: ${new Date()}</p>
+      </div>
+      `;
+    document.getElementById("donation-history-log").appendChild(h4);
     document.getElementById("quota-amount").value = "";
   });
+
+document.getElementById("show-donation").addEventListener("click", function () {
+  showSectionById("donation-section");
+});
+document.getElementById("show-history").addEventListener("click", function () {
+  showSectionById("donation-history");
+});
