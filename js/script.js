@@ -1,3 +1,10 @@
+function blogLink() {
+  window.location.href = "../blog.html";
+}
+function homeLink() {
+  window.location.href = "../index.html";
+}
+
 function getInputFieldValueById(id) {
   const inputDonationAmount = document.getElementById(id).value;
   return inputDonationAmount;
