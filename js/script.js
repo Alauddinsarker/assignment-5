@@ -134,13 +134,10 @@ document
     document.getElementById("donationable-amount").innerText =
       newDonationAbleAmount;
     const modalAmount = document.getElementById("modal-amount");
-    // const p = document.createElement("p");
-    // modalAmount.innerHTML = "";
     modalAmount.innerHTML = `
        ${quotaAmount}
       `;
 
-    // modalAmount.appendChild(p);
     const h4 = document.createElement("h4");
     const quotaHeading = document.getElementById("quota-heading").innerText;
     h4.innerHTML = `
@@ -152,10 +149,22 @@ document
     document.getElementById("donation-history-log").appendChild(h4);
     document.getElementById("quota-amount").value = "";
   });
+const showDonation = document.getElementById("show-donation");
+const showHistory = document.getElementById("show-history");
 
-document.getElementById("show-donation").addEventListener("click", function () {
+showDonation.addEventListener("click", function () {
+  showDonation.classList.add("bg-[#B4F461]");
+  showHistory.classList.remove("bg-[#B4F461]");
+  showDonation.classList.remove("bg-slate-200");
+  showHistory.classList.add("bg-slate-200");
+
   showSectionById("donation-section");
 });
-document.getElementById("show-history").addEventListener("click", function () {
+showHistory.addEventListener("click", function () {
+  showDonation.classList.remove("bg-[#B4F461]");
+  showHistory.classList.add("bg-[#B4F461]");
+  showDonation.classList.add("bg-slate-200");
+  showHistory.classList.remove("bg-slate-200");
+
   showSectionById("donation-history");
 });
